@@ -1,6 +1,6 @@
 # Task list
 
-Task list is a simple "to-do" list that use local storage to save all of your tasks and was made with no frameworks, only pure JS, HTML and CSS.
+A simple and responsive "to-do" list that use local storage to save all of your tasks, made with no frameworks, only pure JS, HTML and CSS.
 
 
 ## GH Pages 
