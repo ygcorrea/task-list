@@ -10,7 +10,6 @@ inputTask.addEventListener('keypress', function (e) {
 });
 
 btnTask.addEventListener('click', function (e) {
-  // console.log(inputTask.value);
   if (!inputTask.value) return;
   makeTask(inputTask.value);
 });
@@ -42,7 +41,7 @@ function clearInput() {
 }
 
 function createDeleteBtn(li) {
-  li.innerText += '  '; //dando espaço entre texto e btn
+  li.innerText += '  ';
   const deleteBtn = document.createElement('button');
   deleteBtn.innerText = 'Delete';
   deleteBtn.setAttribute('class', 'delete');
@@ -51,20 +50,20 @@ function createDeleteBtn(li) {
 }
 function saveTasks() {
   const liTasks = tasks.querySelectorAll('li');
-  const taskList = []; //criando um array
+  const taskList = [];
 
   for (let task of liTasks) {
     let taskText = task.innerText;
     taskText = taskText.replace('Delete', '').trim();
-    taskList.push(taskText); // colocando as tasks dentro do meu array
+    taskList.push(taskText);
   }
-  const taskJSON = JSON.stringify(taskList); // transformando meu json em string(localstorage so permite armazenamento de string)
+  const taskJSON = JSON.stringify(taskList);
   localStorage.setItem('tasks', taskJSON);
 }
 
 function addSavedTasks() {
   const tasks = localStorage.getItem('tasks');
-  const taskList = JSON.parse(tasks); // transofrmando em um array novamente
+  const taskList = JSON.parse(tasks);
   console.log(tasks);
 
   for (let task of taskList) {
